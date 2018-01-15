@@ -22,3 +22,6 @@ call vundle#begin()
   Plugin 'dracula/vim'
 call vundle#end()
 filetype plugin indent on
+
+set completeopt=longest,menu
+
