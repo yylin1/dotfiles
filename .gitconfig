@@ -1,0 +1,18 @@
+[user]
+	name = kairen
+	email = kyle.b@inwinstack.com
+[core]
+	editor = vim
+[color]
+	ui = auto
+	diff = auto
+	status = auto
+	branch = auto
+	log = auto
+[alias]
+	br = branch
+	st = status
+	ch = checkout
+	co = checkout
+	df = diff
+	la = log --graph --decorate --pretty=oneline --abbrev-commit --all
