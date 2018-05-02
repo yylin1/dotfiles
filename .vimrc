@@ -1,5 +1,6 @@
 set encoding=utf-8
 set nocompatible
+colorscheme onedark
 filetype off
 syntax on
 
@@ -12,16 +13,19 @@ call vundle#begin()
   Plugin 'c9s/vikube.vim'
   Plugin 'c9s/hypergit.vim'
   Bundle 'https://github.com/scrooloose/nerdtree'
-  Plugin 'dracula/dracula-theme', {'rtp': 'vim/'}
   Bundle 'https://github.com/fatih/vim-go'
   Bundle 'chase/vim-ansible-yaml'
   Bundle 'tpope/vim-fugitive'
   Plugin 'dgryski/vim-godef'
   Plugin 'nsf/gocode', {'rtp': 'vim/'}
   Plugin 'Valloric/YouCompleteMe'
-  Plugin 'dracula/vim'
 call vundle#end()
 filetype plugin indent on
 
 set completeopt=longest,menu
 
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
