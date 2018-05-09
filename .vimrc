@@ -2,6 +2,10 @@ set encoding=UTF-8
 set nocompatible
 set number
 set cursorline
+set shiftwidth=4
+set backspace=indent,eol,start
+set tabstop=4
+set softtabstop=4
 filetype off
 syntax on
 
@@ -85,7 +89,6 @@ let NERDTreeKeepTreeInNewTab=1
 let NERDTreeIgnore=['\.pyc','\~$','\.swo$','\.swp$','\.git','\.hg','\.svn','\.bzr']
 let NERDTreeWinPos = 'left'
 let g:nerdtree_tabs_open_on_console_startup=1
-
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
