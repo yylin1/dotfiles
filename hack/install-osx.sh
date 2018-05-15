@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Install deps.
+# Setup Mac OS X deps.
 # Release: Kyle Bai
 
 set -eu

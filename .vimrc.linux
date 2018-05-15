@@ -27,6 +27,8 @@ Plugin 'VundleVim/Vundle.vim'
   Plugin 'nsf/gocode', {'rtp': 'vim/'}
   Plugin 'fatih/vim-go'
   Plugin 'kien/ctrlp.vim'
+  Plugin 'dracula/dracula-theme', {'rtp': 'vim/'}
+  Plugin 'dracula/vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -70,8 +72,7 @@ if !has('gui_running')
 endif
 
 set term=xterm-256color
-colorscheme one
-set background=dark
+color dracula
 
 " NERD Tree settings
 let NERDTreeShowBookmarks=1
