@@ -4,6 +4,7 @@ set number
 set cursorline
 set shiftwidth=4
 set backspace=indent,eol,start
+set completeopt=longest,menu
 set tabstop=4
 set softtabstop=4
 filetype off
@@ -27,10 +28,27 @@ Plugin 'VundleVim/Vundle.vim'
   Plugin 'nsf/gocode', {'rtp': 'vim/'}
   Plugin 'fatih/vim-go'
   Plugin 'kien/ctrlp.vim'
+  Plugin 'kairen/onedark.vim'
 call vundle#end()
 filetype plugin indent on
 
-set completeopt=longest,menu
+" Colors settings
+colorscheme onedark
+let g:onedark_termcolors=256
+set term=xterm-256color
+
+if (empty($TMUX))
+  if (has("nvim"))
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
+if !has('gui_running')
+  set t_Co=256
+endif
 
 " Key maps
 " autocmd VimEnter * NERDTree
@@ -54,24 +72,6 @@ map sj <C-w>j
 map sk <C-w>k
 map sl <C-w>l
 map sh <C-w>h
-
-" Colors settings
-if (empty($TMUX))
-  if (has("nvim"))
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-endif
-
-if !has('gui_running')
-  set t_Co=256
-endif
-
-set term=xterm-256color
-colorscheme one
-set background=dark
 
 " NERD Tree settings
 let NERDTreeShowBookmarks=1
