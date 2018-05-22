@@ -29,7 +29,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export GOPATH=$HOME/Desktop/Devel/Go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:/usr/local/apiserver-builder/bin
 
 # Node version manager
 export NVM_DIR="$HOME/.nvm"

@@ -54,7 +54,7 @@ endif
 " autocmd VimEnter * NERDTree
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 nmap <C-t> :TagbarToggle<CR>
-nnoremap <silent> gb :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <silent> gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 nmap bf  :bfirst<CR>
 nmap bl  :blast<CR>
@@ -62,8 +62,6 @@ nmap bn  :bnext<CR>
 nmap bp  :bprev<CR>
 nmap bd  :bdelete<CR>
 
-nmap = <C-W>+
-nmap - <C-W>-
 nmap _  <C-w>>
 nmap +  <C-w><
 
