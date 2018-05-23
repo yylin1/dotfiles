@@ -1,8 +1,8 @@
 export ZSH=/home/k2r2bai/.oh-my-zsh
-source $ZSH/oh-my-zsh.sh
 
 ZSH_THEME="ys"
 plugins=(git encode64 urltools osx autojump kubectl completion zsh)
+source $ZSH/oh-my-zsh.sh
 
 # Golang envs
 export GOROOT=/usr/local/go
