@@ -7,28 +7,32 @@ set backspace=indent,eol,start
 set completeopt=longest,menu
 set tabstop=4
 set softtabstop=4
+set updatetime=100
+set autowrite
 filetype off
 syntax on
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-  Plugin 'chase/vim-ansible-yaml'
-  Plugin 'tpope/vim-fugitive'
-  Plugin 'majutsushi/tagbar'
-  Plugin 'scrooloose/nerdtree'
+  Plugin 'airblade/vim-gitgutter'
   Plugin 'c9s/vikube.vim'
-  Plugin 'c9s/hypergit.vim'
-  Plugin 'Valloric/YouCompleteMe'
+  Plugin 'c9s/helper.vim'
+  Plugin 'c9s/treemenu.vim'
+  Plugin 'chase/vim-ansible-yaml'
+  Plugin 'dgryski/vim-godef'
+  Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } 
   Plugin 'itchyny/lightline.vim'
+  Plugin 'kien/ctrlp.vim'
+  Plugin 'kairen/onedark.vim'
+  Plugin 'majutsushi/tagbar'
+  Plugin 'nsf/gocode', {'rtp': 'vim/'}
+  Plugin 'scrooloose/nerdtree'
+  Plugin 'tpope/vim-fugitive'
+  Plugin 'Valloric/YouCompleteMe'
   Plugin 'vim-airline/vim-airline'
   Plugin 'vim-airline/vim-airline-themes'
   Plugin 'Xuyuanp/nerdtree-git-plugin'
-  Plugin 'dgryski/vim-godef'
-  Plugin 'nsf/gocode', {'rtp': 'vim/'}
-  Plugin 'fatih/vim-go'
-  Plugin 'kien/ctrlp.vim'
-  Plugin 'kairen/onedark.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -58,8 +62,8 @@ nnoremap <silent> gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 nmap bf  :bfirst<CR>
 nmap bl  :blast<CR>
-nmap bn  :bnext<CR>
-nmap bp  :bprev<CR>
+nmap <   :bprev<CR>
+nmap >   :bnext<CR>
 nmap bd  :bdelete<CR>
 
 nmap _  <C-w>>
@@ -72,6 +76,7 @@ map sl <C-w>l
 map sh <C-w>h
 
 " NERD Tree settings
+let g:NERDTreeWinSize=25
 let NERDTreeShowBookmarks=1
 let NERDTreeMouseMode=2
 let NERDTreeQuitOnOpen=0
@@ -96,6 +101,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ }
 
 " Golang settings
+let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
@@ -149,3 +155,4 @@ let g:airline#extensions#whitespace#symbol = '!'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
+
