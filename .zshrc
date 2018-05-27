@@ -12,9 +12,11 @@ plugins=(git encode64 urltools osx autojump kubectl completion zsh zsh-autosugge
 source $ZSH/oh-my-zsh.sh
 alias git='hub'
 alias vim='mvim -v'
-alias kc='kubectl'
-alias kcs='kubectl -n kube-system'
 fpath=(~/.zsh/completions $fpath)
+
+# key mapping
+bindkey "[C" forward-word
+bindkey "[D" backward-word
 
 # Compilation flags
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -28,6 +30,11 @@ export GOPATH=$HOME/Desktop/Devel/Go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/usr/local/apiserver-builder/bin
+
+# Kubernetes
+export KUBE_EDITOR="mvim -v"
+alias kc='kubectl'
+alias kcs='kubectl -n kube-system'
 
 # Node version manager
 export NVM_DIR="$HOME/.nvm"

@@ -66,8 +66,10 @@ nmap <   :bprev<CR>
 nmap >   :bnext<CR>
 nmap bd  :bdelete<CR>
 
-nmap _  <C-w>>
-nmap +  <C-w><
+nmap _ <C-w>>
+nmap + <C-w><
+nmap = <C-W>+
+nmap - <C-W>-
 
 map <Tab> <C-w>w
 map sj <C-w>j
