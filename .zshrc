@@ -10,9 +10,25 @@ export SPACESHIP_VI_MODE_SHOW=false
 
 plugins=(git encode64 urltools osx autojump kubectl completion zsh zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
+fpath=(~/.zsh/completions $fpath)
+
 alias git='hub'
 alias vim='mvim -v'
-fpath=(~/.zsh/completions $fpath)
+
+# Kubernetes
+export KUBE_EDITOR="mvim -v"
+alias k='kubectl'
+alias kks='kubectl -n kube-system'
+alias kns='kubens'
+alias ktx='kubectx'
+alias kd='kubectl delete'
+alias ka='kubectl apply'
+alias kr='kubectl run'
+alias ke='kubectl edit'
+
+# git editor
+export VISUAL='mvim -v'
+export EDITOR="$VISUAL"
 
 # key mapping
 bindkey "[C" forward-word
@@ -29,12 +45,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export GOPATH=$HOME/Desktop/Devel/Go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:/usr/local/apiserver-builder/bin
-
-# Kubernetes
-export KUBE_EDITOR="mvim -v"
-alias kc='kubectl'
-alias kcs='kubectl -n kube-system'
 
 # Node version manager
 export NVM_DIR="$HOME/.nvm"
@@ -46,3 +56,6 @@ if [ -f '/Users/kyle/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/kyle/
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/kyle/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/kyle/google-cloud-sdk/completion.zsh.inc'; fi
+
+# added by travis gem
+[ -f /Users/kyle/.travis/travis.sh ] && source /Users/kyle/.travis/travis.sh
